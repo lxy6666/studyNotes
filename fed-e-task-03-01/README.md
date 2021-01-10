@@ -29,3 +29,24 @@ data: {
 *vue2.x使用Object.defineProperty()去实现;
 *vue3.x使用Proxy()。
 
+###### 2.请简述Diff算法的执行过程
+
+diff算法的过程:
+1. 根据真实DOM生成virtual DOM，当virtual DOM某个节点的数据改变后会生成一个新的Vnode
+2. 然后Vnode和oldVnode作对比，发现有不一样的地方就直接修改在真实的DOM上，然后使oldVnode的值为Vnode
+所以diff算法就是调用名为patch的函数，比较新旧节点Vnode，一边比较一边更新DOM。
+
+
+#### 编程题
+
+###### 1、模拟 VueRouter 的 hash 模式的实现，实现思路和 History 模式类似，把 URL 中的 # 后面的内容作为路由的地址，可以通过 hashchange 事件监听路由地址的变化。
+
+见code/03-01-vue-router-code
+
+###### 2、在模拟 Vue.js 响应式源码的基础上实现 v-html 指令，以及 v-on 指令。
+
+见code/03-01-simulate-vue
+
+###### 3、参考 Snabbdom 提供的电影列表的示例，利用Snabbdom 实现类似的效果
+
+见code/03-01-snabbdom-code
